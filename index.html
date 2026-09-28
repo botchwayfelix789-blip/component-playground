@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Navbar (component + live demo of it as the page nav) ===== -->
+  <nav class="ui-navbar" id="top">
+    <a class="ui-navbar__brand" href="#top">
+      <span class="ui-navbar__dot"></span> Playground
+    </a>
+    <div class="ui-navbar__links">
+      <a href="#button">Button</a>
+      <a href="#card">Card</a>
+      <a href="#modal">Modal</a>
+      <a href="#input">Input</a>
+      <a href="#navbar">Navbar</a>
+    </div>
+    <button class="ui-navbar__toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </nav>
+
+  <header class="hero">
+    <p class="hero__eyebrow">Front-End Component Kit</p>
+    <h1 class="hero__title">A little design toolkit</h1>
+    <p class="hero__lead">Five reusable UI components, one consistent style. Each comes with a live preview and a copy-paste usage example.</p>
+  </header>
+
+  <main class="wrap">
+    <!-- ============ 1. BUTTON ============ -->
+    <section class="section" id="button">
+      <div class="section__head">
+        <h2>1 · Button</h2>
+        <p>Primary, secondary, ghost, and a disabled state — plus sizes.</p>
+      </div>
+      <div class="demo">
+        <div class="demo__stage">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--ghost">Ghost</button>
+          <button class="btn btn--primary" disabled>Disabled</button>
+        </div>
+        <div class="demo__stage">
+          <button class="btn btn--primary btn--sm">Small</button>
+          <button class="btn btn--primary">Medium</button>
+          <button class="btn btn--primary btn--lg">Large</button>
+        </div>
+      </div>
+      <pre class="usage"><code>&lt;button class="btn btn--primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn--secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn--ghost btn--sm"&gt;Ghost small&lt;/button&gt;</code></pre>
+    </section>
+
+    <!-- ============ 2. CARD ============ -->
+    <section class="section" id="card">
+      <div class="section__head">
+        <h2>2 · Card</h2>
+        <p>A flexible content container with an image, body, and actions.</p>
+      </div>
+      <div class="demo">
+        <div class="demo__stage demo__stage--start">
+          <article class="ui-card">
+            <div class="ui-card__media">🏔️</div>
+            <div class="ui-card__body">
+              <span class="ui-card__tag">Travel</span>
+              <h3 class="ui-card__title">Reach the summit</h3>
+              <p class="ui-card__text">A reusable card with a media header, tag, title, copy, and a footer action row.</p>
+              <div class="ui-card__foot">
+                <button class="btn btn--primary btn--sm">Explore</button>
+                <button class="btn btn--ghost btn--sm">Save</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <pre class="usage"><code>&lt;article class="ui-card"&gt;
+  &lt;div class="ui-card__media"&gt;🏔️&lt;/div&gt;
+  &lt;div class="ui-card__body"&gt;
+    &lt;span class="ui-card__tag"&gt;Travel&lt;/span&gt;
+    &lt;h3 class="ui-card__title"&gt;Reach the summit&lt;/h3&gt;
+    &lt;p class="ui-card__text"&gt;Short description…&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </section>
+
+    <!-- ============ 3. MODAL ============ -->
+    <section class="section" id="modal">
+      <div class="section__head">
+        <h2>3 · Modal</h2>
+        <p>An accessible dialog with a backdrop, close button, and Esc-to-close.</p>
+      </div>
+      <div class="demo">
+        <div class="demo__stage">
+          <button class="btn btn--primary" id="open-modal">Open modal</button>
+        </div>
+      </div>
+      <pre class="usage"><code>&lt;button data-modal-open="demo-modal"&gt;Open&lt;/button&gt;
+
+&lt;div class="ui-modal" id="demo-modal" hidden&gt;
+  &lt;div class="ui-modal__box"&gt;…&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <!-- ============ 4. FORM INPUT ============ -->
+    <section class="section" id="input">
+      <div class="section__head">
+        <h2>4 · Form input</h2>
+        <p>Labelled text field with helper text and a live validation state.</p>
+      </div>
+      <div class="demo">
+        <div class="demo__stage demo__stage--start">
+          <form class="ui-field-group" id="demo-form" novalidate>
+            <div class="ui-field">
+              <label class="ui-field__label" for="email">Email address</label>
+              <input class="ui-field__input" id="email" type="email" placeholder="you@example.com" />
+              <span class="ui-field__help" id="email-help">We'll never share it.</span>
+            </div>
+            <button class="btn btn--primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <pre class="usage"><code>&lt;div class="ui-field"&gt;
+  &lt;label class="ui-field__label" for="email"&gt;Email&lt;/label&gt;
+  &lt;input class="ui-field__input" id="email" type="email" /&gt;
+  &lt;span class="ui-field__help"&gt;Helper text&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <!-- ============ 5. NAVBAR ============ -->
+    <section class="section" id="navbar">
+      <div class="section__head">
+        <h2>5 · Navbar</h2>
+        <p>The bar at the top of this page <em>is</em> the component. Here it is in isolation:</p>
+      </div>
+      <div class="demo">
+        <div class="demo__stage demo__stage--start">
+          <nav class="ui-navbar ui-navbar--static">
+            <span class="ui-navbar__brand"><span class="ui-navbar__dot"></span> Brand</span>
+            <div class="ui-navbar__links">
+              <a href="#navbar">Home</a>
+              <a href="#navbar">Docs</a>
+              <a href="#navbar">Pricing</a>
+            </div>
+            <button class="btn btn--primary btn--sm">Sign up</button>
+          </nav>
+        </div>
+      </div>
+      <pre class="usage"><code>&lt;nav class="ui-navbar"&gt;
+  &lt;span class="ui-navbar__brand"&gt;Brand&lt;/span&gt;
+  &lt;div class="ui-navbar__links"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt; &lt;a href="#"&gt;Docs&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">Built as a Front-End intern task · 5 components, one system.</footer>
+
+  <!-- ===== Modal markup ===== -->
+  <div class="ui-modal" id="demo-modal" hidden>
+    <div class="ui-modal__backdrop" data-modal-close></div>
+    <div class="ui-modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="ui-modal__close" data-modal-close aria-label="Close">&times;</button>
+      <h3 class="ui-modal__title" id="modal-title">You opened the modal 🎉</h3>
+      <p class="ui-modal__text">Click the backdrop, the &times; button, or press <kbd>Esc</kbd> to close. Focus returns to the trigger.</p>
+      <div class="ui-modal__actions">
+        <button class="btn btn--ghost" data-modal-close>Cancel</button>
+        <button class="btn btn--primary" data-modal-close>Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
